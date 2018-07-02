@@ -25,12 +25,7 @@ SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'v@smgc-0tqvz!jy_&6#nf)vjcyeo&m
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = bool( os.environ.get('DJANGO_DEBUG', True) ) #IF DJANGO_DEBUG is an empty string, that evalutes to false. Can't have DJANGO_DEBUG as 'False', because it's just a string
 
-<<<<<<< HEAD
 ALLOWED_HOSTS = ['whispering-sands-96014.herokuapp.com','0.0.0.0']
-=======
-ALLOWED_HOSTS = []
->>>>>>> e8197eca8259c97e7a7764909828d6161f5720db
-
 
 # Application definition
 
@@ -47,10 +42,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
-<<<<<<< HEAD
     'whitenoise.middleware.WhiteNoiseMiddleware',    
-=======
->>>>>>> e8197eca8259c97e7a7764909828d6161f5720db
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -126,27 +118,20 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
-<<<<<<< HEAD
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_URL = '/static/'
 
 # Simplified static file serving.
 # https://warehouse.python.org/project/whitenoise/
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
-=======
 
-STATIC_URL = '/static/'
->>>>>>> e8197eca8259c97e7a7764909828d6161f5720db
 
 ENV_PATH = os.path.abspath(os.path.dirname(__file__))
 MEDIA_ROOT = os.path.join(ENV_PATH, 'user-uploads/')
 MEDIA_URL = "user-uploads/"
 
-<<<<<<< HEAD
 # Heroku: Update database configuration from $DATABASE_URL.
 import dj_database_url
 db_from_env = dj_database_url.config(conn_max_age=500)
 DATABASES['default'].update(db_from_env)
 
-=======
->>>>>>> e8197eca8259c97e7a7764909828d6161f5720db

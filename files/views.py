@@ -47,10 +47,6 @@ class file(RetrieveDestroyAPIView):
         
         ret_file={}
         ret_file['url'] = 'http://{0}/user-uploads/{1}'.format(request.get_host(), str(file.file))
-<<<<<<< HEAD
-=======
-        print(file.file.__dict__)
->>>>>>> e8197eca8259c97e7a7764909828d6161f5720db
         ret_file['owner'] = str(file.owner)
         ret_file['id'] = str(file.id)         
     
