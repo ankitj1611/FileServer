@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
+    'storages',
     'files.apps.FilesConfig',
 ]
 
@@ -126,9 +127,19 @@ STATIC_URL = '/static/'
 # https://warehouse.python.org/project/whitenoise/
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
+#Media file serving for development
 ENV_PATH = os.path.abspath(os.path.dirname(__file__))
 MEDIA_ROOT = os.path.join(ENV_PATH, 'user-uploads/')
 MEDIA_URL = "user-uploads/"
+
+#Media file serving for production
+DROPBOX_OAUTH2_TOKEN =  os.environ.get('DROPBOX_OAUTH2_TOKEN', None) 
+
+if DROPBOX_OAUTH2_TOKEN:
+    DEFAULT_FILE_STORAGE = 'storages.backends.dropbox.DropBoxStorage'
+    
+
+
 
 # Heroku: Update database configuration from $DATABASE_URL.
 import dj_database_url
