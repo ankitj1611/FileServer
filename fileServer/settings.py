@@ -25,7 +25,7 @@ SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'v@smgc-0tqvz!jy_&6#nf)vjcyeo&m
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = bool( os.environ.get('DJANGO_DEBUG', True) ) #IF DJANGO_DEBUG is an empty string, that evalutes to false. Can't have DJANGO_DEBUG as 'False', because it's just a string
 
-ALLOWED_HOSTS = ['whispering-sands-96014.herokuapp.com']
+ALLOWED_HOSTS = ['whispering-sands-96014.herokuapp.com','0.0.0.0']
 
 
 # Application definition
